@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Mieteinheit extends Model {
+class Zaehlerart extends Model {
 
     use HasFactory;
 
-    protected $table = 'mieteinheiten';
+    protected $table = "zaehlerarten";
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -23,14 +23,8 @@ class Mieteinheit extends Model {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function mietvertraege(): HasMany {
-        return $this->hasMany(Mietvertrag::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function zaehler(): HasMany {
         return $this->hasMany(Zaehler::class);
     }
+
 }

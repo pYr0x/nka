@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('zaehlerarten', function (Blueprint $table) {
             $table->id();
             $table->string('bezeichnung');
-            $table->text('beschreibung');
+            $table->text('beschreibung')
+                  ->nullable();
+            $table->enum('zuordnung', ['Mieteinheit', 'Allgemein', 'Hauptzähler']);
+            $table->foreignId('mietobjekt_id')
+                  ->constrained('mietobjekte');
             $table->timestamps();
         });
     }

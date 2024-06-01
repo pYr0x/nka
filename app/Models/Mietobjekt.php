@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Mietobjekt extends Model
-{
+class Mietobjekt extends Model {
+
     use HasFactory;
 
     /**
@@ -20,8 +20,15 @@ class Mietobjekt extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function mieteinheiten(): HasMany
-    {
+    public function mieteinheiten(): HasMany {
         return $this->hasMany(Mieteinheit::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function zaehlerarten(): HasMany {
+        return $this->hasMany(Zaehlerart::class);
+    }
+
 }

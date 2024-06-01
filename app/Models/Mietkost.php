@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Mietkost extends Model
-{
+class Mietkost extends Model {
+
     use HasFactory;
 
     protected $table = 'mietkosten';
@@ -15,8 +15,7 @@ class Mietkost extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function mietvertrag(): HasOne
-    {
+    public function mietvertrag(): HasOne {
         return $this->hasOne(Mietvertrag::class);
     }
 }

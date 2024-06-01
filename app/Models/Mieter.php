@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Mieter extends Model
-{
+class Mieter extends Model {
+
     use HasFactory;
 
     protected $table = 'mieter';
@@ -15,8 +15,7 @@ class Mieter extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function mietvertraege(): BelongsToMany
-    {
+    public function mietvertraege(): BelongsToMany {
         return $this->belongsToMany(Mietvertrag::class, 'mieter_mietvertraege');
     }
 }

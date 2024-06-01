@@ -15,10 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('nummer');
             $table->date('einbau');
-            $table->unsignedFloat('zaehlerstand_einbau');
+            $table->unsignedFloat('zaehlerstand_einbau')
+                  ->default(0);
             $table->date('eichung_bis');
 
-            $table->foreignId('mieteinheit_id')->constrained('mieteinheiten');
+            $table->foreignId('mieteinheit_id')
+                  ->nullable()
+                  ->constrained('mieteinheiten');
             $table->foreignId('zaehlerart_id')->constrained('zaehlerarten');
 
             $table->timestamps();
