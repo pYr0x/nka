@@ -1,0 +1,42 @@
+###
+GRAPHQL http://localhost:8000/graphql
+Content-Type: application/json
+Authorization: Bearer 46|laravel_sanctum_hKi6AdZotEGE453gZ7gaYmjJPZEwlyQroXeWjpc516d509c8
+
+Product
+{
+title
+description
+}
+
+
+###
+GET http://localhost:8000/api/products
+Accept: application/json
+Authorization: Bearer 2|laravel_sanctum_JMUZts96Se3pRt0IWDqlCoDGtiKJ8mtUJyCNv2bBe7728bd3
+
+
+###
+POST http://localhost:8000/api/products
+Content-Type: application/x-www-form-urlencoded
+
+email = mail@mail.com &
+password = 123456
+
+
+###
+
+
+#GRAPHQL http://localhost:8000/graphql
+#Cookie: laravel_session=eyJpdiI6IlMyeVBYVXZiVS9Cb0dXWElkKzZJV0E9PSIsInZhbHVlIjoicnRaYWFVYzJvVWp5eE5oQStXSTZCakI1WTV3dVhRcDAyd090ZlQwdWpUQlRFYWpvTlU2MVhLb0hVMlJPN28zOTlWanQ3NGlYK0JhM0MvckZsekVjMXJHNEpDeFJEZlZzV0RPNVZLS05YUmtZQnpQM3ovUVFSNmthWUdsSXY1VHQiLCJtYWMiOiJhOGY0MWQyMzMwYmIyMmFlMWNhYjJmYzhlMjQwNzBjNmM3NmUzMDVkYzc3MzMxZWFlMDAwMzg1OTZkNTc0MGFjIiwidGFnIjoiIn0%3D;
+#mutation
+#{
+#    login(email: "mail@test.com", password: "123456"){email}
+#}
+
+#query{user(email: "mail@test.com"){email}}
+
+#query{foo}
+
+
+
