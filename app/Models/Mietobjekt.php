@@ -31,4 +31,11 @@ class Mietobjekt extends Model {
         return $this->hasMany(Zaehlerart::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function kostenarten(): HasMany {
+        return $this->hasMany(Kostenart::class);
+    }
+
 }

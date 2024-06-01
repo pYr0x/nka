@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('verteilungsschluessel', function (Blueprint $table) {
             $table->id();
             $table->string('bezeichnung');
-            $table->text('beschreibung');
+            $table->text('beschreibung')
+                  ->nullable();
             $table->string('berechnungsfunktion');
             $table->timestamps();
         });

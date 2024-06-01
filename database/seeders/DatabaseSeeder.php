@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Kosten;
+use App\Models\Kostenart;
 use App\Models\Mieteinheit;
 use App\Models\Mieter;
 use App\Models\Mietkost;
@@ -44,7 +46,7 @@ class DatabaseSeeder extends Seeder {
             $mietobjekt->mieteinheiten()
                        ->saveMany($mieteinheiten);
 
-            // Zählerarten
+            // Zähler
             $zaehlerartenMieteinheit = [];
             foreach (['Warmwasser', 'Kaltwasser', 'Kaltwasser Waschraum', 'Heizung'] as $b) {
                 $zaehlerartenMieteinheit[] = Zaehlerart::factory()
@@ -81,6 +83,18 @@ class DatabaseSeeder extends Seeder {
                                    ]);
             }
 
+            // Kosten
+            $mietobjekt->kostenarten()
+                       ->saveMany([
+                                      Kostenart::factory()
+                                               ->make(['bezeichnung' => 'Heizkosten']),
+                                      Kostenart::factory()
+                                               ->make(['bezeichnung' => 'Warmwasserkosten']),
+                                      Kostenart::factory()
+                                               ->make(['bezeichnung' => 'Hausnebenkosten']),
+                                  ]);
+
+            // Mieteinheiten
             $mieteinheiten->each(function ($mieteinheit, int $key) use ($mieter, $zaehlerartenMieteinheit) {
                 $mietvertrag = Mietvertrag::factory()
                                           ->makeOne();
@@ -148,12 +162,5 @@ class DatabaseSeeder extends Seeder {
 
         });
 
-
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kostenpositionen', function (Blueprint $table) {
+        Schema::create('kostenstellen', function (Blueprint $table) {
             $table->id();
-            $table->string('kostenposition');
-            $table->string('einheit');
+            $table->string('bezeichnung');
 
             $table->foreignId('kostenart_id')->constrained('kostenarten');
+
             $table->foreignId('verteilungsschluessel_id')->constrained('verteilungsschluessel');
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kostenpositionen');
+        Schema::dropIfExists('kostenstellen');
     }
 };

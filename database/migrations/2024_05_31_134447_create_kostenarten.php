@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('kostenarten', function (Blueprint $table) {
             $table->id();
-            $table->string('kostenart');
+            $table->string('bezeichnung');
+            $table->text('beschreibung')
+                  ->nullable();
+            $table->foreignId('mietobjekt_id')
+                  ->constrained('mietobjekte');
             $table->timestamps();
         });
     }
