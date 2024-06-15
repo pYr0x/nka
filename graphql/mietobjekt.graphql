@@ -1,0 +1,13 @@
+#import mieteinheit.graphql
+
+type Mietobjekt {
+    id: ID!
+    strasse: String!
+    hausnummer: String!
+    plz: Int!
+    ort: String!
+    fluerstueck: String
+    grundstuecksgroesse: Int!
+    anmerkungen: String
+    mieteinheiten: [Mieteinheit!]! @hasMany
+}

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedInteger('plz');
             $table->string('ort');
             $table->string('flurstueck')->nullable();
-            $table->unsignedInteger('grundstuecksgroeße');
+            $table->unsignedInteger('grundstuecksgroesse');
             $table->text('anmerkungen')->nullable();
 
             $table->foreignId('user_id')->index();

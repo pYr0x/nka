@@ -1,0 +1,8 @@
+type Mieteinheit {
+    id: ID!
+    nr: String!
+    leerstand: Boolean!
+    wohnflaeche: Float!
+    anmerkungen: String
+    mitobjekt: Mietobjekt! @belongsTo
+}

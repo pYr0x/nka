@@ -22,7 +22,7 @@ class MietobjektFactory extends Factory
             'plz' => fake()->postcode(),
             'ort' => fake()->city(),
             'flurstueck' => fake()->randomNumber(5, true),
-            'grundstuecksgroeße' => fake()->randomNumber(3, true)
+            'grundstuecksgroesse' => fake()->randomNumber(3, TRUE),
         ];
     }
 }

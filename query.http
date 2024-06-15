@@ -1,3 +1,23 @@
+POST http://localhost:8000/api/login
+Content-Type: application/json
+X-Requested-With: XMLHttpRequest
+
+{
+    "email": "grieger@example.com",
+    "password": "password"
+}
+
+###
+###
+GRAPHQL http://localhost:8000/graphql
+Content-Type: application/json
+
+query{
+    mietobjekte{
+    id
+}}
+
+
 ###
 GRAPHQL http://localhost:8000/graphql
 Content-Type: application/json
@@ -17,10 +37,10 @@ Authorization: Bearer 2|laravel_sanctum_JMUZts96Se3pRt0IWDqlCoDGtiKJ8mtUJyCNv2bB
 
 
 ###
-POST http://localhost:8000/api/products
+POST http://localhost:8000/api/login
 Content-Type: application/x-www-form-urlencoded
 
-email = mail@mail.com &
+eemail = mail@mail.com &
 password = 123456
 
 

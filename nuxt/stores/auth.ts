@@ -13,7 +13,7 @@ export const useAuthStore = defineStore('auth', {
     getters: {},
     actions: {
         async login(credentials: LoginCredentials) {
-            const data = await $fetch(`http://localhost:8000/api/products`, {
+            const data = await $fetch(`http://localhost:8000/api/login`, {
                 method: "post",
                 body: credentials,
             });
